@@ -31,26 +31,38 @@ public class StudentDAO {
         }
     }
 
-    public void updateStudent(Student student) {
-        Transaction transaction = null;
-        try (Session session = DBUtil.getSessionFactory().openSession()) {
-            transaction = session.beginTransaction();
-            session.update(student);
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) transaction.rollback();
-        }
+    public boolean updateStudent(Student student) {
+    Transaction transaction = null;
+    try (Session session = DBUtil.getSessionFactory().openSession()) {
+        transaction = session.beginTransaction();
+        session.update(student);
+        transaction.commit();
+        return true; 
+    } catch (Exception e) {
+        if (transaction != null) transaction.rollback();
+        return false; 
     }
+}
 
-    public void deleteStudent(int id) {
-        Transaction transaction = null;
-        try (Session session = DBUtil.getSessionFactory().openSession()) {
-            transaction = session.beginTransaction();
-            Student student = session.get(Student.class, id);
-            if (student != null) session.delete(student);
+
+    public boolean deleteStudent(int id) {
+    Transaction transaction = null;
+    try (Session session = DBUtil.getSessionFactory().openSession()) {
+        transaction = session.beginTransaction();
+        Student student = session.get(Student.class, id);
+        
+        if (student != null) {
+            session.delete(student);
             transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) transaction.rollback();
+            return true;  
+        } else {
+            transaction.rollback();
+            return false; 
         }
+    } catch (Exception e) {
+        if (transaction != null) transaction.rollback();
+        return false;
     }
+}
+
 }

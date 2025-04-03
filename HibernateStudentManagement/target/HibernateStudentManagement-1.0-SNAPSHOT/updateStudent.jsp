@@ -2,11 +2,20 @@
 <%@ page import="java.sql.*" %>
 <%
     String errorMessage = request.getParameter("error");
-    int studentId = (Integer) request.getAttribute("studentId");
+
+    // Check if attributes exist before casting
+    Integer studentIdObj = (Integer) request.getAttribute("studentId");
     String name = (String) request.getAttribute("name");
     String class1 = (String) request.getAttribute("class1");
-    int marks = (Integer) request.getAttribute("marks");
+    Integer marksObj = (Integer) request.getAttribute("marks");
     String gender = (String) request.getAttribute("gender");
+
+    // Provide default values if attributes are null
+    int studentId = (studentIdObj != null) ? studentIdObj : 0;
+    int marks = (marksObj != null) ? marksObj : 0;
+    if (name == null) name = "";
+    if (class1 == null) class1 = "";
+    if (gender == null) gender = "";
 %>
 <!DOCTYPE html>
 <html lang="en">

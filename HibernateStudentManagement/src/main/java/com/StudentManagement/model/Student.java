@@ -5,15 +5,16 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "students")
 public class Student {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id")  
     private int id;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "class")
+    @Column(name = "class") 
     private String studentClass;
 
     @Column(name = "marks")
@@ -32,24 +33,17 @@ public class Student {
     }
 
     public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
     public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
     public String getStudentClass() { return studentClass; }
+    public void setStudentClass(String studentClass) { this.studentClass = studentClass; }
+
     public int getMarks() { return marks; }
+    public void setMarks(int marks) { this.marks = marks; }
+
     public String getGender() { return gender; }
-
-    public void setName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    public void setStudentClass(String studentClass) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    public void setMarks(int marks) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
-
-    public void setGender(String gender) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-    }
+    public void setGender(String gender) { this.gender = gender; }
 }

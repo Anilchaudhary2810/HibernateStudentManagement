@@ -1,5 +1,6 @@
 package com.StudentManagement.util;
 
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -9,7 +10,7 @@ public class DBUtil {
     private static SessionFactory buildSessionFactory() {
         try {
             return new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-        } catch (Throwable ex) {
+        } catch (HibernateException ex) {
             throw new ExceptionInInitializerError(ex);
         }
     }

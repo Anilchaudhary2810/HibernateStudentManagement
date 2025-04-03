@@ -6,37 +6,37 @@
     <!-- Servlet Definitions -->
     <servlet>
         <servlet-name>AdminLoginServlet</servlet-name>
-        <servlet-class>com.StudentManagement.servlet.AdminLoginServlet</servlet-class>
+        <servlet-class>com.StudentManagement.javaservlet.AdminLoginServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.StudentManagement.servlet.LogoutServlet</servlet-class>
+        <servlet-class>com.StudentManagement.javaservlet.LogoutServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>AdminDashboardServlet</servlet-name>
-        <servlet-class>com.StudentManagement.servlet.AdminDashboardServlet</servlet-class>
+        <servlet-class>com.StudentManagement.javaservlet.AdminDashboardServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>AddStudentServlet</servlet-name>
-        <servlet-class>com.StudentManagement.servlet.AddStudentServlet</servlet-class>
+        <servlet-class>com.StudentManagement.javaservlet.AddStudentServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>UpdateStudentServlet</servlet-name>
-        <servlet-class>com.StudentManagement.servlet.UpdateStudentServlet</servlet-class>
+        <servlet-class>com.StudentManagement.javaservlet.UpdateStudentServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>DeleteStudentServlet</servlet-name>
-        <servlet-class>com.StudentManagement.servlet.DeleteStudentServlet</servlet-class>
+        <servlet-class>com.StudentManagement.javaservlet.DeleteStudentServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>DisplayStudentDataServlet</servlet-name>
-        <servlet-class>com.StudentManagement.servlet.DisplayStudentDataServlet</servlet-class>
+        <servlet-class>com.StudentManagement.javaservlet.DisplayStudentDataServlet</servlet-class>
     </servlet>
 
     <!-- Servlet Mappings -->

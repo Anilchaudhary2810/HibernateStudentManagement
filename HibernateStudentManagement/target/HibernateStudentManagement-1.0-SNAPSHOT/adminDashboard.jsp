@@ -1,5 +1,6 @@
+<%@page import="com.StudentManagement.model.Student"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.StudentManagement.javaservlet.Student" %>
+<%@ page import="com.StudentManagement.model.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -82,8 +83,6 @@
         
         <br>
         <button class="button" onclick="window.location.href='addStudent.html'">Add Student</button>
-        <button class="button" onclick="window.location.href='deleteStudent.html'">Delete Student using ID</button>
-        <button class="button" onclick="window.location.href='updateStudent.html'">Update Student using ID</button>
         <br><br>
         <button class="button" onclick="window.location.href='LogoutServlet'">Logout</button>
     </div>

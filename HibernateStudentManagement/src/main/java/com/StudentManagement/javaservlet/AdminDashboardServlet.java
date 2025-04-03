@@ -8,7 +8,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpSession;
 
 public class AdminDashboardServlet extends HttpServlet {
@@ -23,8 +22,11 @@ public class AdminDashboardServlet extends HttpServlet {
 
         StudentDAO studentDAO = new StudentDAO();
         List<Student> students = studentDAO.getAllStudents();
-        
+
+      
         request.setAttribute("students", students);
+        request.setAttribute("studentCount", students.size());  
+
         request.getRequestDispatcher("adminDashboard.jsp").forward(request, response);
     }
 }
